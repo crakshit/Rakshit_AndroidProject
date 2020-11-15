@@ -2,7 +2,10 @@ package com.example.rakshit_project1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +15,7 @@ public class DetailsActivity extends AppCompatActivity {
     TextView product_name, product_price, product_description, product_flavours;
     String name, price, description, flavours;
     int image;
+    Button product_buy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class DetailsActivity extends AppCompatActivity {
         product_description = findViewById(R.id.product_description);
         product_flavours = findViewById(R.id.product_flavours);
         product_price = findViewById(R.id.product_price);
+        product_buy = findViewById(R.id.product_buy);
 
         name = getIntent().getStringExtra("name");
         description = getIntent().getStringExtra("description");
@@ -35,6 +40,18 @@ public class DetailsActivity extends AppCompatActivity {
         product_flavours.setText(flavours);
         product_description.setText(description);
         product_image.setImageResource(image);
+
+        //On Click even on buy now
+        product_buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailsActivity.this, CheckoutActivity.class);
+                intent.putExtra("name", name);
+                intent.putExtra("price", price);
+                startActivity(intent);
+
+            }
+        });
 
     }
 }

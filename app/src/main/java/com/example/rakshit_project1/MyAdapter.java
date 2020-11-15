@@ -63,6 +63,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.product_flavours.setText(product.getItem_flavours());
         holder.product_price.setText(String.valueOf(product.getPrice()));
         holder.product_image.setImageResource(product.getImage());
+
+
         holder.product_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
