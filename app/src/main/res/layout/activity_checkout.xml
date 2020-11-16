@@ -19,10 +19,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/info_card"
                 android:layout_width="380dp"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="25dp">
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -31,14 +31,15 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/fullname"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="318dp"
-                        android:layout_height="72dp"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Full name"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.089">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -49,33 +50,35 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/email"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="318dp"
-                        android:layout_height="72dp"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Email"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/fullname"
-                        app:layout_constraintVertical_bias="0.011">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number" />
+                            android:inputType="textEmailAddress" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/phone"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="318dp"
-                        android:layout_height="72dp"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Phone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/email"
-                        app:layout_constraintVertical_bias="0.058">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -90,10 +93,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/address_card"
                 android:layout_width="380dp"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="25dp">
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -102,14 +105,15 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/address"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="318dp"
-                        android:layout_height="72dp"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Address"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.089">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -120,77 +124,80 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/city"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="163dp"
-                        android:layout_height="71dp"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="City"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.142"
+                        app:layout_constraintHorizontal_bias="0.10"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/address"
-                        app:layout_constraintVertical_bias="0.021">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number" />
+                            android:layout_height="wrap_content" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/state"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="163dp"
-                        android:layout_height="71dp"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="State"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.4"
                         app:layout_constraintStart_toEndOf="@+id/city"
                         app:layout_constraintTop_toBottomOf="@id/address"
-                        app:layout_constraintVertical_bias="0.021">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number" />
+                            android:layout_height="wrap_content" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/country"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="163dp"
-                        android:layout_height="64dp"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Country"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.142"
+                        app:layout_constraintHorizontal_bias="0.1"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/city">
+                        app:layout_constraintTop_toBottomOf="@+id/city"
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number" />
+                            android:layout_height="wrap_content" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/pincode"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="163dp"
-                        android:layout_height="71dp"
-                        android:layout_marginStart="23dp"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Pincode"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.4"
                         app:layout_constraintStart_toEndOf="@+id/country"
-                        app:layout_constraintTop_toBottomOf="@+id/state">
+                        app:layout_constraintTop_toBottomOf="@+id/state"
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number" />
+                            android:layout_height="wrap_content" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -201,29 +208,27 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/payment_card"
                 android:layout_width="380dp"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="25dp">
-                app:layout_constraintStart_toEndOf="info_card"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/cardnumber"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="318dp"
-                        android:layout_height="50dp"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Card Number"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.25">
+                        app:layout_constraintVertical_bias="0.0">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -236,15 +241,17 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/expdate"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="160dp"
-                        android:layout_height="69dp"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="Exp Date"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.14"
+                        app:layout_constraintHorizontal_bias="0.1"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardnumber">
+                        app:layout_constraintTop_toBottomOf="@+id/cardnumber"
+                        app:layout_constraintVertical_bias="0.0">
 
                         <EditText
                             android:id="@+id/editTextDate"
@@ -259,13 +266,16 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/cvv"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="168dp"
-                        android:layout_height="70dp"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
                         android:hint="CVV"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.4"
                         app:layout_constraintStart_toEndOf="@+id/expdate"
-                        app:layout_constraintTop_toBottomOf="@+id/cardnumber">
+                        app:layout_constraintTop_toBottomOf="@+id/cardnumber"
+                        app:layout_constraintVertical_bias="0.0">
 
                         <EditText
                             android:id="@+id/editTextNumber"
@@ -278,6 +288,25 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cardholdername"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:hint="Card Holder Name"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/expdate"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -286,7 +315,9 @@
                 android:id="@+id/confirm"
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:text="confirm" />
+                android:text="confirm"
+                android:textColor="@color/design_default_color_on_primary"
+                app:cornerRadius="5dp" />
 
         </LinearLayout>
     </ScrollView>
