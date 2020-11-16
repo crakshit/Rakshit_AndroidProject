@@ -22,13 +22,6 @@ public class Product {
         this.price = price;
     }
 
-//    public Product(int image, String item_name, String item_description, float price) {
-//        this.image = image;
-//        this.item_name = item_name;
-//        this.item_description = item_description;
-//        this.price = price;
-//    }
-
     public int getImage() {
         return image;
     }

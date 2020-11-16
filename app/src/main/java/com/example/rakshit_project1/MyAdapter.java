@@ -65,6 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.product_image.setImageResource(product.getImage());
 
 
+        //Click even for each product
         holder.product_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

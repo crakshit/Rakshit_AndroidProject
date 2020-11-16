@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Rakshit_Project1</string>
+    <string name="invalid_name">Enter valid name</string>
+    <string name="invalid_email">Enter valid email</string>
+    <string name="invalid_phone">Enter valid phone number</string>
+    <string name="invalid_address">Enter valid address</string>
+    <string name="invalid_city">Enter valid city</string>
+    <string name="invalid_state">Enter valid state</string>
+    <string name="invalid_country">Enter valid country</string>
+    <string name="invalid_pincode">Enter valid pincode</string>
+    <string name="invalid_cardnumber">Enter valid cardnumber</string>
+    <string name="invalid_expdate">Enter valid exp date</string>
+    <string name="invalid_cvv">Enter valid CVV</string>
 </resources>
