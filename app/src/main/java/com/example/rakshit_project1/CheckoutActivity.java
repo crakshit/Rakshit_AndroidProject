@@ -1,13 +1,16 @@
 package com.example.rakshit_project1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -21,6 +24,8 @@ public class CheckoutActivity extends AppCompatActivity {
     TextInputLayout fullname, email, phone, address, city, state, country, pincode;
     ImageView product_image;
     TextView product_name, product_price, product_qty, product_total;
+    RadioButton cash, card;
+    CardView paymet_card;
 
     Button confirm;
 
@@ -36,6 +41,13 @@ public class CheckoutActivity extends AppCompatActivity {
 //        }
 //    }
     AwesomeValidation validator;
+
+//    public void checkCardValidation(){
+//        validator.addValidation( this, R.id.cardnumber, "^\\d{16}$", R.string.invalid_cardnumber);
+//        validator.addValidation( this, R.id.expdate, "(\\d)(\\d)\\/(\\d)(\\d)", R.string.invalid_expdate);
+//        validator.addValidation( this, R.id.cvv, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
+//        validator.addValidation( this, R.id.cardholdername, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +70,12 @@ public class CheckoutActivity extends AppCompatActivity {
         product_price = findViewById(R.id.product_price);
         product_qty = findViewById(R.id.product_qty);
         product_total = findViewById(R.id.product_total);
+
+        paymet_card = findViewById(R.id.payment_card);
+        paymet_card.setVisibility(View.GONE);
+
+        card = findViewById(R.id.card);
+        cash = findViewById(R.id.cash);
 
         String name = getIntent().getStringExtra("name");
         int image = getIntent().getIntExtra("image", 0);
@@ -86,10 +104,40 @@ public class CheckoutActivity extends AppCompatActivity {
         validator.addValidation( this, R.id.country, "[A-z]+", R.string.invalid_country);
         validator.addValidation( this, R.id.pincode, "([A-Ya-y]\\d)([A-Za-z]\\d){2}", R.string.invalid_pincode);
 
-        validator.addValidation( this, R.id.cardnumber, "^\\d{16}$", R.string.invalid_cardnumber);
-        validator.addValidation( this, R.id.expdate, "(\\d)(\\d)\\/(\\d)(\\d)", R.string.invalid_expdate);
-        validator.addValidation( this, R.id.cvv, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
-        validator.addValidation( this, R.id.cardholdername, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
+        cash.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    paymet_card.setVisibility(View.GONE);
+                } else {
+                    paymet_card.setVisibility(View.VISIBLE);
+                    validator.addValidation( CheckoutActivity.this, R.id.cardnumber, "^\\d{16}$", R.string.invalid_cardnumber);
+                    validator.addValidation( CheckoutActivity.this, R.id.expdate, "(\\d)(\\d)\\/(\\d)(\\d)", R.string.invalid_expdate);
+                    validator.addValidation( CheckoutActivity.this, R.id.cvv, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
+                    validator.addValidation( CheckoutActivity.this, R.id.cardholdername, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
+                }
+
+
+            }
+        });
+
+        card.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    paymet_card.setVisibility(View.VISIBLE);
+                    paymet_card.setVisibility(View.VISIBLE);
+                    validator.addValidation( CheckoutActivity.this, R.id.cardnumber, "^\\d{16}$", R.string.invalid_cardnumber);
+                    validator.addValidation( CheckoutActivity.this, R.id.expdate, "(\\d)(\\d)\\/(\\d)(\\d)", R.string.invalid_expdate);
+                    validator.addValidation( CheckoutActivity.this, R.id.cvv, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
+                    validator.addValidation( CheckoutActivity.this, R.id.cardholdername, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
+                } else {
+                    paymet_card.setVisibility(View.GONE);
+                }
+            }
+        });
+
 
 
         confirm.setOnClickListener(new View.OnClickListener() {
