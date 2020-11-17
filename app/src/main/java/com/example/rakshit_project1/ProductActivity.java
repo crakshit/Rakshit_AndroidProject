@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,8 @@ public class ProductActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.productRecycler);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
+        //Log.i("image",""+R.drawable.jerico);
 
         mDataset.add(new Product(R.drawable.sanmarcos,"San Marcos","This coffee is sourced from a cooperative located in Ocotepeque’s Sensenti valley, known as the Beneficio San Marcos. Like most coffee producing regions in Honduras, smallholder farmers are organized into coops to benefit from shared access to resources, infrastructure, certifications.", "milk chocolate, dates, sugary plum", (float) 20.5));
         mDataset.add(new Product(R.drawable.jerico,"Jericó","This coffee is sourced from a collective of 19 independent farmers located in Jericó, in the colombian department of Antioquia. The small town has a rich coffee culture but limited access to resources. As such, these 19 dedicated farmers came together to collectively produce a consistent, high-quality naturally processed coffee, known as the Naturals Community Project. Each farmer produces their own cherries, but they all work together to hand-select, soak and sun-dry their lots.", "strawberry, raspberry jam, chocolate",(float) 19.2));

@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -18,6 +19,8 @@ import com.google.android.material.textfield.TextInputLayout;
 public class CheckoutActivity extends AppCompatActivity {
 
     TextInputLayout fullname, email, phone, address, city, state, country, pincode;
+    ImageView product_image;
+    TextView product_name, product_price, product_qty, product_total;
 
     Button confirm;
 
@@ -50,6 +53,26 @@ public class CheckoutActivity extends AppCompatActivity {
         country = findViewById(R.id.country);
         pincode = findViewById(R.id.pincode);
 
+        product_image = findViewById(R.id.product_image);
+        product_name = findViewById(R.id.product_name);
+        product_price = findViewById(R.id.product_price);
+        product_qty = findViewById(R.id.product_qty);
+        product_total = findViewById(R.id.product_total);
+
+        String name = getIntent().getStringExtra("name");
+        int image = getIntent().getIntExtra("image", 0);
+        String qty = getIntent().getStringExtra("qty");
+        String price = getIntent().getStringExtra("price");
+        //String price = getIntent().getStringExtra("price");
+
+        Float total = Float.valueOf(price)*Float.valueOf(qty);
+
+        product_image.setImageResource(image);
+        product_name.setText(name);
+        product_qty.setText(qty);
+        product_price.setText(price);
+        product_total.setText(total.toString());
+
 
         confirm = findViewById(R.id.confirm);
 
@@ -61,11 +84,11 @@ public class CheckoutActivity extends AppCompatActivity {
         validator.addValidation( this, R.id.city, "[A-z]+", R.string.invalid_city);
         validator.addValidation( this, R.id.state, "[A-z]+", R.string.invalid_state);
         validator.addValidation( this, R.id.country, "[A-z]+", R.string.invalid_country);
-        validator.addValidation( this, R.id.pincode, "([ABCEGHJKLMNPRSTVXY]\\d)([ABCEGHJKLMNPRSTVWXYZ]\\d){2}", R.string.invalid_pincode);
+        validator.addValidation( this, R.id.pincode, "([A-Ya-y]\\d)([A-Za-z]\\d){2}", R.string.invalid_pincode);
 
         validator.addValidation( this, R.id.cardnumber, "^\\d{16}$", R.string.invalid_cardnumber);
         validator.addValidation( this, R.id.expdate, "(\\d)(\\d)\\/(\\d)(\\d)", R.string.invalid_expdate);
-        validator.addValidation( this, R.id.cvv, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
+        validator.addValidation( this, R.id.product_qty, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
         validator.addValidation( this, R.id.cardholdername, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
 
 

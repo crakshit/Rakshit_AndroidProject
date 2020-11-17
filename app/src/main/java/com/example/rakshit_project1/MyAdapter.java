@@ -2,6 +2,7 @@ package com.example.rakshit_project1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,12 +28,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.mDataset = mDataset;
     }
 
-/*
-    public MyAdapter(List<Product> myDataset)
-    {
-        this.mDataset = myDataset;
-    }
-*/
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -75,6 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 intent.putExtra("price",String.valueOf(product.getPrice()));
                 intent.putExtra("description",product.getItem_description());
                 intent.putExtra("name",product.getItem_name());
+                Log.i("context",""+context);
                 context.startActivity(intent);
 
             }

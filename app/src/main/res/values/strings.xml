@@ -11,4 +11,5 @@
     <string name="invalid_cardnumber">Enter valid cardnumber</string>
     <string name="invalid_expdate">Enter valid exp date</string>
     <string name="invalid_cvv">Enter valid CVV</string>
+    <string name="invalid_qty">Enter valid qty</string>
 </resources>
