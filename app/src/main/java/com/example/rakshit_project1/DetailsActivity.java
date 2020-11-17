@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -51,7 +49,7 @@ public class DetailsActivity extends AppCompatActivity {
         Log.i("image", ""+image);
 
         product_name.setText(name);
-        product_price.setText(price);
+        product_price.setText("$ "+price);
         product_flavours.setText(flavours);
         product_description.setText(description);
         product_image.setImageResource(image);

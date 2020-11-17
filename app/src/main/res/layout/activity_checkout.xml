@@ -381,7 +381,7 @@
                         android:layout_width="320dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:hint="Card Number"
+                        android:hint="Credit card Number"
                         app:hintTextColor="@android:color/background_light"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -424,7 +424,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/product_qty"
+                        android:id="@+id/cvv"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="150dp"
                         android:layout_height="60dp"

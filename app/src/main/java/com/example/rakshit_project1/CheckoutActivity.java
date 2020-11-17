@@ -70,8 +70,8 @@ public class CheckoutActivity extends AppCompatActivity {
         product_image.setImageResource(image);
         product_name.setText(name);
         product_qty.setText(qty);
-        product_price.setText(price);
-        product_total.setText(total.toString());
+        product_price.setText("$ "+price);
+        product_total.setText("$ "+total.toString());
 
 
         confirm = findViewById(R.id.confirm);
@@ -88,7 +88,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         validator.addValidation( this, R.id.cardnumber, "^\\d{16}$", R.string.invalid_cardnumber);
         validator.addValidation( this, R.id.expdate, "(\\d)(\\d)\\/(\\d)(\\d)", R.string.invalid_expdate);
-        validator.addValidation( this, R.id.product_qty, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
+        validator.addValidation( this, R.id.cvv, "(\\d)(\\d)(\\d)", R.string.invalid_cvv);
         validator.addValidation( this, R.id.cardholdername, RegexTemplate.NOT_EMPTY, R.string.invalid_name);
 
 
