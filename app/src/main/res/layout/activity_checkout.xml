@@ -401,7 +401,7 @@
                         android:layout_width="320dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:hint="Credit card Number"
+                        android:hint="Card Number"
                         app:hintTextColor="@android:color/background_light"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -423,7 +423,7 @@
                         android:layout_width="150dp"
                         android:layout_height="60dp"
                         android:layout_margin="10dp"
-                        android:hint="Exp Date"
+                        android:hint="MM/YY"
 
                         app:hintTextColor="@android:color/background_light"
                         app:layout_constraintBottom_toBottomOf="parent"
